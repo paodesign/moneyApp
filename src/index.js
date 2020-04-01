@@ -29,3 +29,55 @@ function anadir(e) {
 function eliminarLi(){
     this.parentNode.removeChild(this);
 }*/
+(function () {
+var formulario = document.formulario_registro;
+var elementos = formulario.elements;
+
+var validarInputs = function () {
+    for (var i = 0; i < elementos.length; i++) {
+        if (elementos[i].type == "text") {
+            let small = document.getElementById(`alerta_${elementos[i].name}`);
+            if (elementos[i].value == 0) {
+                small.className += " mostrar";
+                elementos[i].className = elementos[i].className + " error";
+                return false;
+            } else {
+                elementos[i].className = elementos[i].className.replace(" error", "");
+                small.className = small.className.replace(" mostrar", "");
+            }
+        }
+    }
+    return true;
+};
+
+var  enviar = function(e){
+    if (!validarInputs()) {
+        console.log('Falto validar los Input');
+        e.preventDefault();
+    }else{
+        console.log('Envia');
+        e.preventDefault();
+    }
+}
+//funciones blur y focus
+var focusInput = function () {
+    this.parentElement.children[1].className = "label active";
+    this.parentElement.children[0].className = this.parentElement.children[0].className.replace("error", "");
+    //this.parentElement.children[1].className = this.parentElement.children[0]
+}
+var blurInput = function () {
+    if (this.value <= 0) {
+        this.parentElement.children[1].className = "label";
+        this.parentElement.children[0].className = this.parentElement.children[0].className + " error";
+    }
+}
+//eventns
+formulario.addEventListener("submit", enviar);
+
+for (var i = 0; i < elementos.length; i++) {
+    if (elementos[i].type == "text" || elementos[i].type == "email" || elementos[i].type == "password") {
+        elementos[i].addEventListener("focus", focusInput);
+        elementos[i].addEventListener("blur", blurInput);
+    }
+}
+}())
