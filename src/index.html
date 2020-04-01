@@ -1,11 +1,66 @@
 <!DOCTYPE html>
 <html>
-    <header>
-        <meta charset="UTF-8">
-        <link  rel="stylesheet" href="index.css">
-        <title></title>
-    </header>
-    <body>
-        <script src="index.js"></script>
-    </body>
+<header>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="index.css">
+    <title></title>
+</header>
+
+<body>
+    <!--<div id="container">
+        <form action="#">
+            <label for="anadir">Mi lista de la compra:</label>
+            <input type="text" name="anadir" id="anadir">
+            <input type="button" value="Añadir a la lista" id="btn">
+        </form>    
+        
+        <ul id="listaCompra"></ul>
+        
+        <p>Nota: Puedes eliminar elementos de la lista haciendo doble click sobre ellos</p>
+       </div>-->
+       <div class="contenedor-formulario">
+		<div class="wrap">
+			<form action="" class="formulario" name="formulario_registro" method="get">
+				<div>
+					<div class="input-group">
+						<input type="text" id="nombre" name="nombre">
+						<label class="label" for="nombre">Nombre Tarea:</label>
+					</div>
+					<div class="input-group">
+						<input type="text" id="descripcion" name="descripcion">
+						<label class="label" for="descripcion">Descripcion:</label>
+					</div>
+					<div class="input-group">
+						<input type="text" id="fecha" name="fecha">
+						<label class="label" for="fecha">Fecha:</label>
+					</div>
+					<div class="input-group">
+						<input type="text" id="monto" name="monto">
+						<label class="label" for="monto">Monto:</label>
+					</div>
+					
+					<input type="submit" id="btn-submit" value="Enviar">
+				</div>
+			</form>
+		</div>
+	</div>
+     <!-- <table>
+        <thead>
+            <tr>
+                <th>Categoria</th>
+                <th>Monto</th>
+                <th>Fecha</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>supermercado</th>
+                <th>2500</th>
+                <th>01 de abril</th>
+            </tr>
+        </tbody>
+    </table>-->
+    <script src="index.js"></script>
+</body>
+
 </html>
